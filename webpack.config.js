@@ -14,6 +14,7 @@ module.exports = {
   },
   devServer: {
     publicPath: '/build/',
+    proxy: { '/' : 'http://localhost:3000' }
     // contentBase: path.resolve(__dirname, 'build'),
   },
   resolve: {
@@ -26,16 +27,28 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'ts-loader',
-          // options: {
-          //   presets: ['@babel/preset-env', '@babel/preset-react']
-          // }
         }
       },
       {
         test: /.(css|scss)$/,
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
-      }
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        }
+      }, 
+      {
+        test: /\.(js|jsx)$/,
+        enforce: 'pre',
+        loader: 'source-map-loader',
+      },
     ],
   },
 }

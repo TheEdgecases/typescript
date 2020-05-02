@@ -1,8 +1,10 @@
-console.log('hello world');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
 
-async function hello(){
-  return 'world'
-}
-
-let string: string = 'hello';
-console.log('string: ', string);
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+, document.getElementById('root'))
