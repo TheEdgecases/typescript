@@ -9,6 +9,7 @@
     "sourceMap": true,
     "esModuleInterop": true,    
     "allowSyntheticDefaultImports": true
+    
     // "lib": ["dom", "ESNext"]
   }
 }
