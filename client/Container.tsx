@@ -11,36 +11,52 @@ interface ComponentProps {
 }
 
 
-class Container extends Component <ComponentProps> {
+class Container extends Component {
 
   render(){
     return (
+      // <div>
+      //   <nav>
+      //     <ul>
+      //       <li>
+      //         <Link to={ '/cherie' }>Cherie</Link>
+      //       </li>
+      //       {/* <li>
+      //         <Link to={ "/marcus" }>Marcus</Link>
+      //       </li>
+      //       <li>
+      //         <Link to={ "/vaughn" }>Vaughn</Link>
+      //       </li>
+      //       <li>
+      //         <Link to={ "/jordan" }>Jordan</Link>
+      //       </li> */}
+      //     </ul>
+      //   </nav>
+
+      // <Switch>
+      //   <Route path="/cherie" render={()=>{ <Cherie />}}/>
+      //   {/* <Route path="/marcus" render={()=>{ <Marcus />}}/>
+      //   <Route path="/vaughn" render={()=>{ <Vaughn />}}/>
+      //   <Route path="/jordan" render={()=>{ <Jordan />}}/> */}
+      // </Switch>
+
+      // </div>
+      <Router>
       <div>
         <nav>
-          <ul>
-            <li>
-              <Link to="/cherie">Cherie</Link>
-            </li>
-            <li>
-              <Link to="/marcus">Marcus</Link>
-            </li>
-            <li>
-              <Link to="/vaughn">Vaughn</Link>
-            </li>
-            <li>
-              <Link to="/jordan">Jordan</Link>
-            </li>
-          </ul>
+          <Link to="/cherie">Cherry</Link>
+          <Link to="/vaughn">Vons</Link>
+          <Link to="/marcus">Marco420</Link>
+          <Link to="/jordan">Jorge</Link>
         </nav>
-
-      <Switch>
-        <Route path="/cherie" render={()=>{ <Cherie />}}/>
-        <Route path="/marcus" render={()=>{ <Marcus />}}/>
-        <Route path="/vaughn" render={()=>{ <Vaughn />}}/>
-        <Route path="/jordan" render={()=>{ <Jordan />}}/>
-      </Switch>
-
+        <Switch>
+          <Route exact path="/cherie" component={Cherie} />
+          <Route exact path="/vaughn" component={Vaughn} />
+          <Route exact path="/marcus" component={Marcus} />
+          <Route exact path="/jordan" component={Jordan} />
+        </Switch>
       </div>
+    </Router>
     )
   }
 }
