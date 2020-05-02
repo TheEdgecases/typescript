@@ -1,6 +1,15 @@
 {
   "compilerOptions" : {
-    "target": "esnext"
+    "target": "esnext",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "module": "commonjs",
+    "outDir": "./build/",
+    "sourceMap": true,
+    "esModuleInterop": true,    
+    "allowSyntheticDefaultImports": true
+    
     // "lib": ["dom", "ESNext"]
   }
 }

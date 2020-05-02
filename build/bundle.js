@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log('hello world');\nasync function hello() {\n    return 'world';\n}\nlet string = 'hello';\nconsole.log('string: ', string);\n\n\n//# sourceURL=webpack:///./client/index.tsx?");
+eval("throw new Error(\"Module parse failed: Unexpected token (5:16)\\nFile was processed with these loaders:\\n * ./node_modules/ts-loader/index.js\\nYou may need an additional loader to handle the result of these loaders.\\n| import { BrowserRouter } from 'react-router-dom';\\n| import App from './App.tsx';\\n> ReactDOM.render(<BrowserRouter>\\n|     <App />\\n|   </BrowserRouter>, document.getElementById('root'));\");\n\n//# sourceURL=webpack:///./client/index.tsx?");
 
 /***/ })
 
