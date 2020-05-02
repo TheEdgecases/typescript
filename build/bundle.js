@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log('hello world');\n\n\n//# sourceURL=webpack:///./client/index.tsx?");
+eval("console.log('hello world');\nasync function hello() {\n    return 'world';\n}\nlet string = 'hello';\nconsole.log('string: ', string);\n\n\n//# sourceURL=webpack:///./client/index.tsx?");
 
 /***/ })
 
