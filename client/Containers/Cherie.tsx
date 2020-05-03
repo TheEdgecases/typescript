@@ -1,14 +1,32 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 
-class Cherie extends Component {
+// COMPONENTS
+// React.Node for function declarations
+// React.FC for function components 
+  // const Cherie: React.FC = () => <h1>Cherizzle</h1>
 
-  render (){
+// PROPS
+// Define with interface or type 
+
+// HOOKS
+const [cherie, setCherie] = useState('');
+
+interface Props {
+  name: string,
+  age: number
+}
+
+// type Props = {
+// name: string,
+// age: number,  
+// }
+
+function Cherie({ name, age } : Props): React.ReactNode {
     return (
       <div>
-        Hello Cherie
+        <h1>Cherizzle</h1>
       </div>
     )
-  }
 }
 
 export default Cherie;
