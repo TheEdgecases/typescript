@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
+import { NoteGen } from '../vaughn/NoteGen';
 
-class Vaughn extends Component {
+interface State {
+  edit: boolean;
+}
+
+class Vaughn extends Component<{}, State> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      edit: false,
+    }
+  }
 
   render (){
     return (
       <div>
-        Hello Vaughn
+        <button onClick={() => this.setState({...this.state, edit: !this.state.edit})}>EDIT</button>
+        <NoteGen edit={this.state.edit} />
       </div>
     )
   }
