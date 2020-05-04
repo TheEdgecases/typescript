@@ -1,19 +1,21 @@
 import React from 'react';
 
 interface Props {
-  todos: any
+  key: number,
+  todos: string
 }
 
-function Todo ({ todos: any }): React.ReactNode {
-  function handleClick(e) {
+
+const Todo: React.FC<Props> = () => {
+  
+  function deleteItem(e) {
     e.preventDefault();
-    console.log('The link was clicked.');
   }
 
   return (
     <div>
-      { this.props.todo }
-      <button onClick={ handleClick }>X</button>
+      { this.props.todos }
+      <button onClick={ deleteItem }>X</button>
     </div>
   )
 }

@@ -12,7 +12,8 @@ import Todo from './Todo'
 // Define with interface or type 
 
 // interface Props {
-//   todo: any
+//   name: string,
+//   age: number
 // }
 
 // type Props = {
@@ -20,29 +21,33 @@ import Todo from './Todo'
 // age: number,  
 // }
 
+
   const Cherie: React.FC = () => {
 
-  const [item, setItem] = useState([]);
+  const [items, setItem] = useState<any>([]);
 
-  const todos = [];
-  for (let i = 0; i < item.length; i++){
-    todos.push(<Todo key={i} todos={ this.state.item[i] } />)
-  }
 
     return (
       <div id="list">
         <h1 style={ styles.h1 }>Cherizzle's To Do List</h1>
-        <form onSubmit={(e) => {
+        <form onSubmit={(e)=>{ 
           e.preventDefault();
-          setItem(item.push(e.target))
-        }}>
+          // how are you suppose to grab the input value???
+          console.log('onSubmit e:', e)
+          }}>
         
-        <input type="text"></input> 
+        <input type="text"/> 
         <button type="submit">Add</button>
-        
-        { todos }
-
         </form>
+
+        <h4 style={ styles.h4 }>Current List:</h4>
+        <ul>
+          {
+            items.map((item, index)=>{
+            <li><Todo key={index} todos={item}/></li>
+            })
+          }
+        </ul>
       </div>
     )
 }
@@ -54,5 +59,10 @@ const styles = {
     fontFamily: 'courier',
     fontSize: '2rem',
     color: '#77815c'
+  },
+  h4: {
+    fontFamily: 'courier',
+    fontSize: '1rem',
+    color: "#31057a"
   }
 }
